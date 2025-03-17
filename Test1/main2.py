@@ -7,7 +7,7 @@ def len_joke():
 def get_joke():
     url = 'http://api.icndb.com/jokes/random'
 
-    response = requests.get(url)
+    response = requests.get(url, timeout=10)
 
     if response.status_code == 200:
         joke = response.json()['value']['joke']
